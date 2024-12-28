@@ -21,9 +21,9 @@ public class User {
 
     private String password;
 
-    private String fullname;
+    private String fullName;
 
-    private String username;
+    private String userName;
 
     private byte role;
 

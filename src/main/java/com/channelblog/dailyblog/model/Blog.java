@@ -15,15 +15,15 @@ import java.time.LocalDateTime;
 public class Blog {
 
     @Id
-    private ObjectId blogld;
+    private ObjectId blogId;
 
-    private String titte;
+    private String tittle;
 
     private String description;
 
     private boolean publish;
 
-    private ObjectId userld;
+    private ObjectId userId;
 
     private LocalDateTime createdAt;
 
