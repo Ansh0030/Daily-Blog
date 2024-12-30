@@ -10,10 +10,10 @@ import java.util.List;
 @Repository
 public interface BlogRepo extends MongoRepository<Blog, String> {
 
-    Blog deleteBlogById(String blogId);
+    Blog deleteBlogByBlogId(String blogId);
 
-    List<Blog> findbyUserId(String userId , Pageable pageable);
+    List<Blog> findByUserId(String userId , Pageable pageable);
 
-    Blog findbyBlogId(String blogId);
+    Blog findByBlogId(String blogId);
 
 }

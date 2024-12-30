@@ -23,11 +23,11 @@ public class CommentService {
     }
 
     public Comment deleteComment(String commentId) throws Exception{
-        return commentRepo.deleteCommentById(commentId);
+        return commentRepo.deleteCommentByCommentId(commentId);
     }
 
     public List<Comment> getComments(String blogId , Pageable pageable) throws Exception{
-        return commentRepo.findbyBlogId(blogId, pageable);
+        return commentRepo.findByBlogId(blogId, pageable);
     }
 
     public Comment getComment(String commentId) throws Exception{

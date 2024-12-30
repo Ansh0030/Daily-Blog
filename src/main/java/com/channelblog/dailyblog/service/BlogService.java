@@ -23,14 +23,14 @@ public class BlogService {
     }
 
     public Blog deleteBlog(String blogidId) throws Exception{
-        return blogRepo.deleteBlogById(blogidId);
+        return blogRepo.deleteBlogByBlogId(blogidId);
     }
 
     public List<Blog> getBlogs(String useridId ,Pageable pageable) throws Exception{
-        return blogRepo.findbyUserId(useridId, pageable);
+        return blogRepo.findByUserId(useridId, pageable);
     }
 
     public Blog getBlog(String blogidId) throws Exception{
-        return blogRepo.findbyBlogId(blogidId);
+        return blogRepo.findByBlogId(blogidId);
     }
 }
