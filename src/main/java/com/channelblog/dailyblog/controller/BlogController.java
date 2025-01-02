@@ -87,7 +87,30 @@ public class BlogController {
         }
     }
 
-//To be done after some time
+    @GetMapping("/blog")
+    public ResponseEntity<DBSResponse> getBlogs(@RequestParam(defaultValue = "1") int pageNo,
+                                                @RequestParam(defaultValue = "10") int pageSize,
+                                                @RequestParam(defaultValue ="id" ) String sortBy,
+                                                @RequestParam(defaultValue = "1") String userId){
+
+        DBSResponse response = new DBSResponse();
+
+        PageResponse pageResponse = new PageResponse();
+
+        pageResponse.setPageNo(pageNo);
+        pageResponse.setPageSize(pageSize);
+        pageResponse.setSortBy(sortBy);
+        pageResponse.setValue(userId);
+
+        try{
+            List<Blog> blog = blogService.getBlogs(pageResponse);
+            response.setMessage("Blog is fetched Successfully");
+            response.setData(blog);
+            return ResponseEntity.ok(response);
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
 
 
