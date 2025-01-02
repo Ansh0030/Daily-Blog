@@ -46,7 +46,7 @@ public class CommentController {
         Comment comment = new Comment();
         try{
             BeanUtils.copyProperties(commentUpdate, comment);
-            Comment createdCommemnt = commentService.createComment(comment);
+            Comment createdCommemnt = commentService.updateComment(comment);
             response.setMessage("Comment is created Successfully");
             response.setData(createdCommemnt);
             return ResponseEntity.ok(response);
